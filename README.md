@@ -1,57 +1,39 @@
 # Study_Docker
-VMware 쓰는 이유 : window 에서 Linux 쓰려고
 
-Guest OS : 가상 OS
+- VMware
 
-가상 시스템이 파일로 존재 --> 하드 디스크 파일이 멀티 파일일 경우 여러 개로 저장되므로, 사용할 때 분산 저장되고 속도도 빠르지만, 수업에서는 single file로
+*** VMware를 사용하는 이유 : Windows 환경에서 Linux를 설치 및 사용하기 위해서.
 
-vmdk 디스크 파일
-vmxf 환경설정 파일
+*** Guest OS : 가상 OS
 
-이더넷 --> 설ㄹ정
-192.168.2.10 
-24 
-192.168.2.254
-168.126.63.1
-example.com
-호스트 이름 docker1.example.com
+**** 가상 머신(Virtual Machine) 
 
-
-
-root 계정 centos  --> SSH 로그인하도록 허용
+	하드 디스크 파일을 멀티 파일로 지정할 경우 파일이 여러 개로 저장되므로, 사용할 때 분산 저장되고 속도도 빠름.
+ 	
+  	.vmdk : 디스크 파일
+	.vmxf : 환경설정 파일
 
 윈도우, 리눅스, 네트워크 --> 가상화 --> 클라우드 서비스
 
-각각의 터미널에서 입력해서 이름 변경
-hostnamectl set-hostname docker2.example.com
-hostnamectl set-hostname docker3.example.com
+*** docker 설치
 
-nm-connection-editor &
+ 	아래와 같은 명령어를 작성하거나,
+	sudo dnf -y install dnf-plugins-core
+	sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+	sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-nmcli connection up ens33
-
-systemctl restart NetworkManager
-
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+	일련의 과정이 포함된 shell 파일을 다운로드 및 실행하는 명령어를 사용하여 설치할 수 있음.
+	curl -fsSL https://get.docker.com -o get-docker.sh
+	sudo sh ./get-docker.sh --dry-run
 
 
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh ./get-docker.sh --dry-run
+	rpm -qa | egrep "docker|containerd"
+	yum repolist
+	systemctl enable --now docker
 
---> 오후 1시 30분 ~ 2시 시점(로그 확인)
-rpm -qa | egrep "docker|containerd"
-yum repolist
-systemctl enable --now docker
+	systemctl status docker
 
-systemctl status docker
 
-도커허브 
-kimsk715
-!03ebqmf103
-ksbacteria@지메일
 
 
 VMware의 단점 (가상 머신 환경)
@@ -108,5 +90,8 @@ VMware의 단점 (가상 머신 환경)
 2) cgroup
 
 - 컨트롤 그룹이며, 프로세스별로 CPU 및 메모리 사용량과 같은 자원을 감시하고 제한하는 기능.
+
+nginx 이미지 
+데비안 리눅스 + nginx 설치 --> 상당히 간단함.
 
 
