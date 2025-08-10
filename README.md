@@ -2,11 +2,11 @@
 
 - VMware
 
-*** VMware를 사용하는 이유 : Windows 환경에서 Linux를 설치 및 사용하기 위해서.
+--- VMware를 사용하는 이유 : Windows 환경에서 Linux를 설치 및 사용하기 위해서.
 
-*** Guest OS : 가상 OS
+--- Guest OS : 가상 OS
 
-**** 가상 머신(Virtual Machine) 
+---- 가상 머신(Virtual Machine) 
 
 	하드 디스크 파일을 멀티 파일로 지정할 경우 파일이 여러 개로 저장되므로, 사용할 때 분산 저장되고 속도도 빠름.
  	
@@ -16,7 +16,7 @@
 윈도우, 리눅스, 네트워크 --> 가상화 --> 클라우드 서비스
 
 
-*** docker 설치
+--- docker 설치
 
  	아래와 같은 명령어를 작성하거나,
 	sudo dnf -y install dnf-plugins-core
