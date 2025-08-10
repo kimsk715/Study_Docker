@@ -96,3 +96,28 @@ nginx 이미지
 데비안 리눅스 + nginx 설치 --> 상당히 간단함.
 
 
+Red Hat 계열 : CentOS, Fedora, Rocky, Amazon, Oracle
+Debian 계열 : Ubuntu
+
+이미지 - config - cmd - bash ==> bash shell이 실행.
+nginx -g daemon off --> nginx 웹 서버를 백그라운드에서 실행하겠다는 것을 의미.
+
+docker image tag (이미지명) (원하는 이름 or dockerhub ID/이름) --> 이름 및 태그를 변경할 수 있지만, 이미지 개수는 그대로.
+
+출발지 ip 주소 기반 : 6시간 100번 다운로드 가능.
+
+계정 기반 : 6시간 200번 다운로드 가능. ==> docker login -u 아이디
+
+run 옵션 :
+--rm : exit 할 때, container도 삭제.
+-i : 명령어 작성 시 반응형이 되도록 실행하는 옵션 
+-t : 터미널도 실행되도록 하는 옵션.
+-d(--detach) : 
+
+
+bash
+-> gnome-system-monitor 실행 --> bash shell 사용 불가능 --> foreground(포그라운드)
+-> 종료하면 터미널 사용 가능.
+
+-> gnome-system-monitor & --> bash shell도 동시에 사용 가능 --> 백그라운드 실행. 
+
